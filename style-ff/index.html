@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>زخرفة أسماء فري فاير - أشكال مميزة وجاهزة للنسخ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #e94e4e; /* Free Fire red */
+            --primary-color-rgb: 233, 78, 78; /* RGB components for rgba() */
+            --secondary-color: #2c3e50; /* Dark blue/grey */
+            --background-color: #1a1a2e; /* Very dark background */
+            --text-color: #ecf0f1; /* Light text */
+            --input-bg: #34495e;
+            --card-bg: #3c526d;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            --transition-speed: 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            text-align: center;
+            direction: rtl; /* Ensure RTL for the whole body */
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            background-color: var(--secondary-color);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 30px;
+            margin-top: 20px;
+        }
+
+        h1 {
+            font-size: 2.8em;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            font-weight: 900; /* Cairo Black */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        p {
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            color: #bdc3c7;
+        }
+
+        .input-section {
+            margin-bottom: 40px;
+        }
+
+        #nameInput {
+            width: 100%;
+            padding: 15px 20px;
+            border: none;
+            border-radius: var(--border-radius);
+            background-color: var(--input-bg);
+            color: var(--text-color);
+            font-size: 1.2em;
+            text-align: right; /* Align text right for Arabic input */
+            outline: none;
+            transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+            font-family: 'Cairo', sans-serif;
+            font-weight: 700;
+        }
+
+        #nameInput::placeholder {
+            color: #95a5a6;
+        }
+
+        #nameInput:focus {
+            box-shadow: 0 0 0 3px var(--primary-color), 0 0 0 6px rgba(var(--primary-color-rgb), 0.3);
+        }
+
+        .results-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .result-card {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+            min-height: 150px;
+        }
+
+        .result-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .result-card h3 {
+            color: var(--primary-color);
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .decorated-name {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            word-break: break-all; /* Ensures long names wrap */
+            color: #ecf0f1;
+            font-weight: 400; /* Keep decorated names readable */
+            direction: ltr; /* Force decorated names to LTR for better display of special chars */
+        }
+
+        .copy-button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 700;
+            transition: background-color var(--transition-speed), transform var(--transition-speed);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            white-space: nowrap; /* Prevent "نسخ" from wrapping */
+        }
+
+        .copy-button:hover {
+            background-color: #c0392b; /* Darker red */
+            transform: translateY(-2px);
+        }
+
+        .copy-button:active {
+            transform: translateY(0);
+        }
+
+        .copy-button .icon {
+            /* Basic icon styling for copy, using inline SVG data URI */
+            width: 18px;
+            height: 18px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-size: contain;
+            /* Invert icon direction for RTL layout */
+            transform: scaleX(-1);
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 1.1em;
+            color: var(--primary-color);
+            opacity: 0;
+            transition: opacity var(--transition-speed);
+            font-weight: 700;
+            min-height: 25px; /* Reserve space to prevent layout shift */
+        }
+
+        .message.show {
+            opacity: 1;
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #7f8c8d;
+            padding: 10px 0;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            .container {
+                padding: 20px;
+            }
+            .decorated-name {
+                font-size: 1.5em;
+            }
+            .results-container {
+                grid-template-columns: 1fr; /* Stack cards on small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>زخرفة أسماء فري فاير (Free Fire)</h1>
+        <p>أدخل اسمك أو الكلمة التي ترغب بزخرفتها للحصول على أشكال مميزة وجاهزة للنسخ.</p>
+
+        <div class="input-section">
+            <input type="text" id="nameInput" placeholder="اكتب اسمك هنا...">
+        </div>
+
+        <div id="resultsContainer" class="results-container">
+            <!-- Decorated names will be inserted here by JavaScript -->
+        </div>
+
+        <div id="copyMessage" class="message">
+            تم النسخ إلى الحافظة!
+        </div>
+    </div>
+
+    <footer>
+        <p>تم التصميم بواسطة مساعد الذكاء الاصطناعي الخاص بك لتطوير الويب.</p>
+    </footer>
+
+    <script>
+        const charMap = {
+            'a': ['𝖆', '𝕒', 'ⓐ', 'ａ', 'ᴀ'], 'b': ['𝖇', '𝕓', 'ⓑ', 'ｂ', 'ʙ'], 'c': ['𝖈', '𝕔', 'ⓒ', 'ｃ', 'ᴄ'], 'd': ['𝖉', '𝕕', 'ⓓ', 'ｄ', 'ᴅ'], 'e': ['𝖊', '𝕖', 'ⓔ', 'ｅ', 'ᴇ'], 'f': ['𝖋', '𝕗', 'ⓕ', 'ｆ', 'ғ'], 'g': ['𝖌', '𝕘', 'ⓖ', 'ｇ', 'ɢ'], 'h': ['𝖍', '𝕙', 'ⓗ', 'ｈ', 'ʜ'], 'i': ['𝖎', '𝕚', 'ⓘ', 'ｉ', 'ɪ'], 'j': ['𝖏', '𝕛', 'ⓙ', 'ｊ', 'ᴊ'], 'k': ['𝖐', '𝕜', 'ⓚ', 'ｋ', 'ᴋ'], 'l': ['𝖑', '𝕝', 'ⓛ', 'ｌ', 'ʟ'], 'm': ['𝖒', '𝕞', 'ⓜ', 'ｍ', 'ᴍ'], 'n': ['𝖓', '𝕟', 'ⓝ', 'ｎ', 'ɴ'], 'o': ['𝖔', '𝕠', 'ⓞ', 'ｏ', 'ᴏ'], 'p': ['𝖕', '𝕡', 'ⓟ', 'ｐ', 'ᴘ'], 'q': ['𝖖', '𝕢', 'ⓠ', 'ｑ', 'ǫ'], 'r': ['𝖗', '𝕣', 'ⓡ', 'ｒ', 'ʀ'], 's': ['𝖘', '𝕤', 'ⓢ', 'ｓ', 's'], 't': ['𝖙', '𝕥', 'ⓣ', 'ｔ', 'ᴛ'], 'u': ['𝖚', '𝕦', 'ⓤ', 'ｕ', 'ᴜ'], 'v': ['𝖛', '𝕧', 'ⓥ', 'ｖ', 'ᴠ'], 'w': ['𝖜', '𝕨', 'ⓦ', 'ｗ', 'ᴡ'], 'x': ['𝖝', '𝕩', 'ⓧ', 'ｘ', 'x'], 'y': ['𝖞', '𝕪', 'ⓨ', 'ｙ', 'ʏ'], 'z': ['𝖟', '𝕫', 'ⓩ', 'ｚ', 'ᴢ'],
+
+            'A': ['𝕬', '𝔸', 'Ⓐ', 'Ａ', 'ᴀ'], 'B': ['𝕭', '𝔹', 'Ⓑ', 'Ｂ', 'ʙ'], 'C': ['𝕮', 'ℂ', 'Ⓒ', 'Ｃ', 'ᴄ'], 'D': ['𝕯', '𝔻', 'Ⓓ', 'Ｄ', 'ᴅ'], 'E': ['𝕰', '𝔼', 'Ⓔ', 'Ｅ', 'ᴇ'], 'F': ['𝕱', '𝔽', 'Ⓕ', 'Ｆ', 'ғ'], 'G': ['𝕲', '𝔾', 'Ⓖ', 'Ｇ', 'ɢ'], 'H': ['𝕳', 'ℍ', 'Ⓗ', 'Ｈ', 'ʜ'], 'I': ['𝕴', '𝕀', 'Ⓘ', 'Ｉ', 'ɪ'], 'J': ['𝕵', '𝕁', 'Ⓙ', 'Ｊ', 'ᴊ'], 'K': ['𝕶', '𝕂', 'Ⓚ', 'Ｋ', 'ᴋ'], 'L': ['𝕷', '𝕃', 'Ⓛ', 'Ｌ', 'ʟ'], 'M': ['𝕸', '𝕄', 'Ⓜ', 'Ｍ', 'ᴍ'], 'N': ['𝕹', 'ℕ', 'Ⓝ', 'Ｎ', 'ɴ'], 'O': ['𝕺', '𝕆', 'Ⓞ', 'Ｏ', 'ᴏ'], 'P': ['𝕻', 'ℙ', 'Ⓟ', 'Ｐ', 'ᴘ'], 'Q': ['𝕼', 'ℚ', 'Ⓠ', 'Ｑ', 'ǫ'], 'R': ['𝕽', 'ℝ', 'Ⓡ', 'Ｒ', 'ʀ'], 'S': ['𝕾', '𝕊', 'Ⓢ', 'Ｓ', 's'], 'T': ['𝕿', '𝕋', 'Ⓣ', 'Ｔ', 'ᴛ'], 'U': ['𝖀', '𝕌', 'Ⓤ', 'Ｕ', 'ᴜ'], 'V': ['𝖁', '𝕍', 'Ⓥ', 'Ｖ', 'ᴠ'], 'W': ['𝖂', '𝕎', 'Ⓦ', 'Ｗ', 'ᴡ'], 'X': ['𝖃', '𝕏', 'Ⓧ', 'Ｘ', 'x'], 'Y': ['𝖄', '𝕐', 'Ⓨ', 'Ｙ', 'ʏ'], 'Z': ['𝖅', 'ℤ', 'Ⓩ', 'Ｚ', 'ᴢ'],
+
+            '0': ['𝟎', '𝟘', '⓪', '０', '0'], '1': ['𝟏', '𝟙', '①', '１', '1'], '2': ['𝟐', '𝟚', '②', '２', '2'], '3': ['𝟑', '𝟛', '③', '３', '3'], '4': ['𝟒', '𝟜', '④', '４', '4'], '5': ['𝟓', '𝟝', '⑤', '５', '5'], '6': ['𝟔', '𝟞', '⑥', '６', '6'], '7': ['𝟕', '𝟟', '⑦', '７', '7'], '8': ['𝟖', '𝟠', '⑧', '８', '8'], '9': ['𝟗', '𝟡', '⑨', '９', '9'],
+
+            // Common symbols, just pass them through all styles unless a specific Unicode equivalent exists
+            '-': ['-', '-', '-', '-', '-'], '_': ['_', '_', '_', '_', '_'], '.': ['.', '.', '.', '.', '.'],
+            ' ': [' ', ' ', ' ', ' ', ' '], '!': ['!', '!', '!', '!', '!'], '?': ['?', '?', '?', '?', '?'],
+            '+': ['+', '+', '+', '+', '+'], '=': ['=', '=', '=', '=', '='], '&': ['&', '&', '&', '&', '&'],
+            '*': ['*', '*', '*', '*', '*'], '/': ['/', '/', '/', '/', '/'], '\\': ['\\', '\\', '\\', '\\', '\\'],
+            '|': ['|', '|', '|', '|', '|'], '(': ['(', '(', '(', '(', '('], ')': [')', ')', ')', ')', ')'],
+            '[': ['[', '[', '[', '[', '['], ']': [']', ']', ']', ']', ']'], '{': ['{', '{', '{', '{', '{'],
+            '}': ['}', '}', '}', '}', '}'], '<': ['<', '<', '<', '<', '<'], '>': ['>', '>', '>', '>', '>'],
+            ',': [',', ',', ',', ',', ','], ';': [';', ';', ';', ';', ';'], ':': [':', ':', ':', ':', ':'],
+            "'": ["'", "'", "'", "'", "'"], '"': ['"', '"', '"', '"', '"'], '@': ['@', '@', '@', '@', '@'],
+            '#': ['#', '#', '#', '#', '#'], '$': ['$', '$', '$', '$', '$'], '%': ['%', '%', '%', '%', '%'],
+            '^': ['^', '^', '^', '^', '^'], '~': ['~', '~', '~', '~', '~'], '`': ['`', '`', '`', '`', '`']
+        };
+
+        const styleNames = [
+            "خط عريض مميز (Fraktur)",
+            "خط مزدوج (Doublestruck)",
+            "خط داخل دائرة",
+            "خط عريض (Fullwidth)",
+            "أحرف صغيرة (Small Caps)"
+        ];
+
+        const nameInput = document.getElementById('nameInput');
+        const resultsContainer = document.getElementById('resultsContainer');
+        const copyMessage = document.getElementById('copyMessage');
+
+        function decorateName(name, styleIndex) {
+            let decorated = '';
+            for (let i = 0; i < name.length; i++) {
+                const char = name[i];
+                // Check if the character exists in the map and if the specific style index exists for it
+                if (charMap[char] && charMap[char][styleIndex] !== undefined) {
+                    decorated += charMap[char][styleIndex];
+                } else {
+                    // Character not found in map, or no specific style for it, keep original
+                    decorated += char;
+                }
+            }
+            return decorated;
+        }
+
+        function displayDecoratedNames(inputName) {
+            resultsContainer.innerHTML = ''; // Clear previous results
+
+            if (!inputName.trim()) {
+                // If input is empty, clear results and do nothing
+                return;
+            }
+
+            for (let i = 0; i < styleNames.length; i++) {
+                const decorated = decorateName(inputName, i);
+
+                const card = document.createElement('div');
+                card.className = 'result-card';
+
+                const styleTitle = document.createElement('h3');
+                styleTitle.textContent = styleNames[i];
+                card.appendChild(styleTitle);
+
+                const decoratedNameSpan = document.createElement('span');
+                decoratedNameSpan.className = 'decorated-name';
+                decoratedNameSpan.textContent = decorated;
+                card.appendChild(decoratedNameSpan);
+
+                const copyButton = document.createElement('button');
+                copyButton.className = 'copy-button';
+                copyButton.innerHTML = '<span class="icon"></span> نسخ'; // Added SVG icon via CSS background
+                copyButton.dataset.nameToCopy = decorated; // Store the name to copy
+                copyButton.addEventListener('click', handleCopy);
+                card.appendChild(copyButton);
+
+                resultsContainer.appendChild(card);
+            }
+        }
+
+        async function handleCopy(event) {
+            const nameToCopy = event.currentTarget.dataset.nameToCopy;
+            try {
+                await navigator.clipboard.writeText(nameToCopy);
+                showCopyMessage();
+            } catch (err) {
+                console.error('Failed to copy text: ', err);
+                alert('حدث خطأ أثناء النسخ، يرجى المحاولة يدوياً. المتصفح الخاص بك قد لا يدعم النسخ التلقائي.');
+            }
+        }
+
+        let messageTimeout;
+        function showCopyMessage() {
+            copyMessage.classList.add('show');
+            clearTimeout(messageTimeout); // Clear any existing timeout
+            messageTimeout = setTimeout(() => {
+                copyMessage.classList.remove('show');
+            }, 2000); // Hide after 2 seconds
+        }
+
+        // Event listener for input field changes
+        nameInput.addEventListener('input', (event) => {
+            displayDecoratedNames(event.target.value);
+        });
+
+        // Optional: Display default decorations if input has pre-filled value on load
+        document.addEventListener('DOMContentLoaded', () => {
+            const initialName = nameInput.value;
+            if (initialName) {
+                displayDecoratedNames(initialName);
+            }
+        });
+    </script>
+</body>
+</html>
