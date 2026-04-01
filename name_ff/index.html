@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>زخرفة أسماء فري فاير - احترافية وجميلة</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@900&display=swap" rel="stylesheet">
+    <style>
+        /* تعريف المتغيرات الرئيسية للألوان والمسافات */
+        :root {
+            --primary-bg: #1a1a1a; /* خلفية رئيسية داكنة */
+            --secondary-bg: #2b2b2b; /* خلفية ثانوية أغمق قليلاً */
+            --text-color: #f0f0f0; /* لون النص الرئيسي فاتح */
+            --accent-color: #e74c3c; /* لون مميز (أحمر برتقالي) */
+            --button-decorate: #28a745; /* لون زر الزخرفة (أخضر) */
+            --button-copy: #007bff; /* لون زر النسخ (أزرق) */
+            --hover-color: #ff6347; /* لون عند التحويم */
+            --border-radius: 8px; /* نصف قطر الحواف */
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* ظل للعناصر */
+        }
+
+        /* إعادة تعيين الأنماط الأساسية للمتصفح */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* أنماط الجسم */
+        body {
+            font-family: 'Cairo', sans-serif; /* استخدام خط كايرو مع سمك 900 (Black) */
+            background-color: var(--primary-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            text-align: right; /* محاذاة النص الافتراضية لليمين (RTL) */
+        }
+
+        /* حاوية المحتوى الرئيسية */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            width: 100%;
+        }
+
+        /* رأس الصفحة (الهيدر) */
+        header {
+            background-color: var(--secondary-bg);
+            padding: 25px 0;
+            text-align: center;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            color: var(--accent-color);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* ظل للنص */
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 1.2rem;
+            color: #ccc;
+        }
+
+        /* قسم المحتوى العام */
+        section {
+            background-color: var(--secondary-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        /* مجموعة الإدخال (حقل النص والزر) */
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .input-group input[type="text"] {
+            width: 100%;
+            max-width: 500px;
+            padding: 15px 20px;
+            border: 2px solid var(--accent-color);
+            border-radius: var(--border-radius);
+            background-color: var(--primary-bg);
+            color: var(--text-color);
+            font-size: 1.1rem;
+            outline: none;
+            text-align: center;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .input-group input[type="text"]::placeholder {
+            color: #888;
+        }
+
+        .input-group input[type="text"]:focus {
+            border-color: var(--hover-color);
+            box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.5);
+        }
+
+        /* أنماط الأزرار العامة */
+        button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            font-weight: 700;
+        }
+
+        /* زر الزخرفة */
+        .decorate-button {
+            background-color: var(--button-decorate);
+            color: white;
+            width: fit-content;
+        }
+
+        .decorate-button:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
+
+        /* حاوية الأسماء المزخرفة الناتجة */
+        .output-names {
+            margin-top: 30px;
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* عرض مرن للبطاقات */
+        }
+
+        /* بطاقة الاسم المزخرف */
+        .decorated-name-card {
+            background-color: var(--primary-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .decorated-name-card span {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            word-break: break-all; /* لكسر الكلمات الطويلة */
+            direction: ltr; /* لضمان عرض الرموز والأسماء اللاتينية بشكل صحيح */
+        }
+
+        /* زر النسخ داخل البطاقة */
+        .copy-button {
+            background-color: var(--button-copy);
+            color: white;
+            padding: 10px 20px;
+            font-size: 1rem;
+        }
+
+        .copy-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-1px);
+        }
+        
+        /* نمط زر النسخ بعد النسخ بنجاح */
+        .copied {
+            background-color: #28a745 !important; /* لون أخضر */
+        }
+        
+        .copied:hover {
+            background-color: #28a745 !important; /* يحافظ على اللون الأخضر عند التحويم */
+        }
+
+        /* قائمة الأسماء المزخرفة الجاهزة */
+        .pre-decorated-list {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
+        /* تذييل الصفحة (الفوتر) */
+        footer {
+            margin-top: auto; /* يدفع الفوتر إلى الأسفل */
+            background-color: var(--secondary-bg);
+            color: #ccc;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9rem;
+            box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        /* التجاوبية (Responsive design) */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+            section h2 {
+                font-size: 1.8rem;
+            }
+            .input-group input[type="text"],
+            .decorate-button {
+                font-size: 1rem;
+                padding: 12px 20px;
+            }
+            .decorated-name-card span {
+                font-size: 1.3rem;
+            }
+            .copy-button {
+                font-size: 0.9rem;
+                padding: 8px 15px;
+            }
+            .output-names,
+            .pre-decorated-list {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            section h2 {
+                font-size: 1.5rem;
+            }
+            .input-group input[type="text"] {
+                padding: 10px 15px;
+            }
+            .decorate-button {
+                padding: 10px 20px;
+                width: 100%; /* زر بعرض كامل على الشاشات الصغيرة */
+            }
+            .decorated-name-card {
+                padding: 15px;
+            }
+            .decorated-name-card span {
+                font-size: 1.1rem;
+            }
+            .copy-button {
+                font-size: 0.8rem;
+            }
+            .output-names,
+            .pre-decorated-list {
+                grid-template-columns: 1fr; /* عمود واحد على الشاشات الصغيرة جداً */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><span style="color: #FFD700;">زخرفة</span> أسماء <span style="color: #FF4500;">فري فاير</span></h1>
+        <p>احصل على أفضل الأسماء المزخرفة والمميزة للعبتك!</p>
+    </header>
+
+    <main class="container">
+        <section>
+            <h2>زخرفة اسمك الخاص</h2>
+            <div class="input-group">
+                <input type="text" id="nameInput" placeholder="اكتب اسمك هنا لزخرفته...">
+                <button id="decorateButton" class="decorate-button">زخرفة الاسم</button>
+            </div>
+            <div id="outputNames" class="output-names">
+                <!-- سيتم إدراج الأسماء المزخرفة هنا بواسطة JavaScript -->
+            </div>
+        </section>
+
+        <section>
+            <h2>أسماء فري فاير مزخرفة جاهزة للنسخ</h2>
+            <div id="preDecoratedList" class="pre-decorated-list">
+                <!-- سيتم إدراج الأسماء المزخرفة الجاهزة هنا بواسطة JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 زخرفة أسماء فري فاير. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script>
+        const nameInput = document.getElementById('nameInput');
+        const decorateButton = document.getElementById('decorateButton');
+        const outputNamesContainer = document.getElementById('outputNames');
+        const preDecoratedListContainer = document.getElementById('preDecoratedList');
+
+        // قائمة بالأسماء المزخرفة الجاهزة للنسخ
+        const preDecoratedNames = [
+            "༒☬ᶜᴿᴬᶻᵞ°᭄", "乂❤‿❤乂", "亗『𝐀𝐋𝐎𝐍𝐄』亗", "༺₦Ї₦ℑ₳༻", "⚡️𝕯𝖆𝖗𝖐𝕬𝖓𝖌𝖊𝖑⚡️",
+            "꧁༺ʝօӄɛʀ༻꧂", "亗『V I P』亗", "⚔️ᖫㅤS L A Y E Rㅤᖭ⚔️", "♕《L E G E N D》♕",
+            "꧁ঔৣ☬✞ֆքǟʀᏆǟռ✞☬ঔৣ꧂", "༺𝕭𝖆𝖉𝕭𝖔𝖞༻", "꧁༒₦Ї₦ℑ₳༒꧂", "༄ᶦᶰᵈ᭄✿Gᴀᴍᴇʀ࿐",
+            "꧁ঔৣ☠︎𝕯𝖊𝖆𝖙𝖕☠︎ঔৣ꧂", "⚔️《S T R I K E R》⚔️", "亗『G O D』亗", "꧁༺G H O S T༻꧂",
+            "꧁༒❦𝓚𝓲𝓷𝓰❦༒꧂", "༄ᴮᴼˢˢ᭄✿࿐", "꧁༺𝓓𝓮𝓿𝓲𝓵༻꧂", "✿ᶫᵒᵛᵉLᵒᵛᵉ✿", "ᴳᵒᵈ乡",
+            "𝕭𝖑𝖆𝖈𝖐𝕬𝖓𝖌𝖊𝖑", "亗KING亗", "꧁༒SaGaR༒꧂", "🇮🇳亗『LEGEND』亗🇮🇳", "꧁☆☬κɪɴɢ☬☆꧂",
+            "★彡[𝕯𝖆𝖗𝖐]彡★", "꧁༺₦Ї₦ℑ₳༻꧂", "亗『J O K E R』亗", "༺𝓚𝓘𝓛𝓛𝓔𝓡༻", "ᴳᵒᵈ乡Killer",
+            "꧁༒𝓕𝓞𝓧༒꧂", "👑『Boss』👑", "亗『DEVIL』亗", "࿐ᴳᵒᵈ✿", "꧁༒☠︎𝕭𝖆𝖉𝖅☠︎༒꧂",
+            "꧁༺A L O N E༻꧂", "亗『P R O』亗", "👑𝓚𝓘𝓝𝓖👑", "꧁༒𝕭𝖑𝖆𝖈𝖐𝕳𝖆𝖜𝖐༒꧂",
+            "亗『G H O S T』亗", "꧁༒☬𝕭𝖆𝖉𝖌𝖎𝖗𝖑☬༒꧂", "𝕿𝖍𝖊𝕲𝖆𝖒𝖊𝖗", "亗『J E S T E R』亗"
+        ];
+
+        // خريطة استبدال الأحرف للزخرفة الأساسية (تستهدف الأحرف اللاتينية والأرقام)
+        const charMap = {
+            'a': 'α', 'b': 'ʙ', 'c': 'c', 'd': 'ᴅ', 'e': 'є', 'f': 'f', 'g': 'ɢ', 'h': 'н', 'i': 'ı', 'j': 'ᴊ',
+            'k': 'ĸ', 'l': 'ʟ', 'm': 'м', 'n': 'ɴ', 'o': 'σ', 'p': 'ᴘ', 'q': 'q', 'r': 'я', 's': 's', 't': 'т',
+            'u': 'υ', 'v': 'v', 'w': 'ω', 'x': 'x', 'y': 'y', 'z': 'z',
+            'A': 'Ꭺ', 'B': 'Ᏼ', 'C': 'Ꮯ', 'D': 'Ꭰ', 'E': 'Ꭼ', 'F': 'F', 'G': 'Ꮹ', 'H': 'Ꮋ', 'I': 'Ꮖ', 'J': 'Ꭻ',
+            'K': 'Ꮶ', 'L': 'Ꮮ', 'M': 'Ꮇ', 'N': 'N', 'O': 'Ꮎ', 'P': 'Ꮲ', 'Q': 'Q', 'R': 'Ꭱ', 'S': 'Ꮪ', 'T': 'Ꭲ',
+            'U': 'Ꮜ', 'V': 'Ꮩ', 'W': 'Ꮤ', 'X': 'X', 'Y': 'Y', 'Z': 'Ꮓ',
+            '0': '⓪', '1': '①', '2': '②', '3': '③', '4': '④', '5': '⑤', '6': '⑥', '7': '⑦', '8': '⑧', '9': '⑨',
+            ' ': ' ' // الحفاظ على المسافات كما هي
+        };
+
+        // دالة لتطبيق خريطة الأحرف على الاسم
+        function applyCharMap(name) {
+            return name.split('').map(char => charMap[char] || char).join('');
+        }
+
+        // دالة الزخرفة الرئيسية التي تولد عدة أنماط لاسم المستخدم
+        function decorateName(originalName) {
+            if (!originalName.trim()) return []; // إذا كان الاسم فارغاً، أرجع قائمة فارغة
+
+            const name = originalName.trim();
+            const decoratedVersions = [];
+
+            // النمط 1: خريطة الأحرف الأساسية مع رموز محيطة
+            decoratedVersions.push(`『${applyCharMap(name)}』`);
+
+            // النمط 2: غلاف شائع آخر
+            decoratedVersions.push(`꧁༺${applyCharMap(name)}༻꧂`);
+
+            // النمط 3: فاصلات بالشرطات السفلية مع رموز سيوف
+            decoratedVersions.push(`⚔️ ${applyCharMap(name).split(' ').join('_')} ⚔️`);
+
+            // النمط 4: غلاف على الطراز الياباني
+            decoratedVersions.push(`༄ᶦᶰᵈ᭄✿${applyCharMap(name)}࿐`);
+
+            // النمط 5: مع النجوم والنقاط
+            decoratedVersions.push(`★彡${applyCharMap(name).split('').join('•')}彡★`);
+            
+            // النمط 6: رموز البرق
+            decoratedVersions.push(`⚡️『${applyCharMap(name)}』⚡️`);
+
+            // النمط 7: رموز الألماس
+            decoratedVersions.push(`❖ ${applyCharMap(name)} ❖`);
+
+            // النمط 8: أحرف بعرض كامل (للأحرف اللاتينية)
+            const fullWidthName = name.split('').map(char => {
+                const charCode = char.charCodeAt(0);
+                if (charCode >= 33 && charCode <= 126) { // أحرف ASCII القابلة للطباعة
+                    return String.fromCharCode(charCode + 0xFEE0);
+                }
+                return char;
+            }).join('');
+            decoratedVersions.push(fullWidthName);
+
+            // النمط 9: أحرف صغيرة كبيرة (Small Caps)
+            const smallCapsMap = {
+                'A': 'ᴀ', 'B': 'ʙ', 'C': 'ᴄ', 'D': 'ᴅ', 'E': 'ᴇ', 'F': 'ꜰ', 'G': 'ɢ', 'H': 'ʜ', 'I': 'ɪ', 'J': 'ᴊ',
+                'K': 'ᴋ', 'L': 'ʟ', 'M': 'ᴍ', 'N': 'ɴ', 'O': 'ᴏ', 'P': 'ᴘ', 'Q': 'q', 'R': 'ʀ', 'S': 's', 'T': 'ᴛ',
+                'U': 'ᴜ', 'V': 'ᴠ', 'W': 'ᴡ', 'X': 'x', 'Y': 'ʏ', 'Z': 'ᴢ'
+            };
+            const smallCapsVersion = name.split('').map(char => smallCapsMap[char.toUpperCase()] || char).join('');
+            if (smallCapsVersion !== name) { // أضف فقط إذا حدث تغيير فعلي
+                 decoratedVersions.push(`꧁${smallCapsVersion}꧂`);
+            }
+
+            return decoratedVersions;
+        }
+
+        // دالة لنسخ النص إلى الحافظة
+        async function copyToClipboard(text, buttonElement) {
+            try {
+                await navigator.clipboard.writeText(text);
+                buttonElement.textContent = 'تم النسخ!';
+                buttonElement.classList.add('copied');
+                setTimeout(() => {
+                    buttonElement.textContent = 'نسخ';
+                    buttonElement.classList.remove('copied');
+                }, 1500);
+            } catch (err) {
+                console.error('Failed to copy: ', err);
+                alert('فشل النسخ، يرجى المحاولة يدوياً: ' + text);
+            }
+        }
+
+        // دالة لإنشاء بطاقة اسم مزخرف (للقوائم الجاهزة والنتائج)
+        function createNameCard(name) {
+            const card = document.createElement('div');
+            card.className = 'decorated-name-card';
+
+            const nameSpan = document.createElement('span');
+            nameSpan.textContent = name;
+            card.appendChild(nameSpan);
+
+            const copyBtn = document.createElement('button');
+            copyBtn.className = 'copy-button';
+            copyBtn.textContent = 'نسخ';
+            copyBtn.onclick = () => copyToClipboard(name, copyBtn);
+            card.appendChild(copyBtn);
+
+            return card;
+        }
+
+        // ملء قائمة الأسماء المزخرفة الجاهزة عند تحميل الصفحة
+        preDecoratedNames.forEach(name => {
+            preDecoratedListContainer.appendChild(createNameCard(name));
+        });
+
+        // معالج حدث لزر الزخرفة
+        decorateButton.addEventListener('click', () => {
+            const inputName = nameInput.value;
+            outputNamesContainer.innerHTML = ''; // مسح النتائج السابقة
+
+            if (inputName.trim()) {
+                const decorated = decorateName(inputName);
+                if (decorated.length === 0) {
+                    outputNamesContainer.innerHTML = '<p style="text-align: center; color: #ccc;">لم يتم العثور على زخارف لهذا الاسم.</p>';
+                    return;
+                }
+                decorated.forEach(name => {
+                    outputNamesContainer.appendChild(createNameCard(name));
+                });
+            } else {
+                outputNamesContainer.innerHTML = '<p style="text-align: center; color: #ccc;">الرجاء إدخال اسم لزخرفته.</p>';
+            }
+        });
+
+        // تفعيل الزخرفة عند الضغط على زر Enter في حقل الإدخال
+        nameInput.addEventListener('keypress', (event) => {
+            if (event.key === 'Enter') {
+                decorateButton.click();
+            }
+        });
+    </script>
+</body>
+</html>
